@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en" ng-app="RDash">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Tickr.</title>
+    <!-- STYLES -->
+    <!-- build:css lib/css/main.min.css -->
+    <link rel="stylesheet" type="text/css" href="components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="components/rdash-ui/dist/css/rdash.min.css">
+    <link rel="stylesheet" type="text/css" href="less/style.css">
+    <!-- endbuild -->
+    <!-- SCRIPTS -->
+    <!-- build:js lib/js/main.min.js -->
+
+    <script type="text/javascript" src="components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="components/angular-cookies/angular-cookies.min.js"></script>
+    <script type="text/javascript" src="components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="components/angular-ui-notification/dist/angular-ui-notification.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/socket.io.js"></script>
+    <script type="text/javascript" src="../node_modules/noty/js/noty/packaged/jquery.noty.packaged.min.js"></script>
+
+
+
+    <!-- endbuild -->
+    <!-- Custom Scripts -->
+    <script type="text/javascript" src="js/dashboard.min.js"></script>
+</head>
+<body ng-controller="MasterCtrl">
+<div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak>
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar">
+            <li class="sidebar-main">
+                <a ng-click="toggleSidebar()">
+                    Tickr.
+                    <span class="menu-icon glyphicon glyphicon-transfer"></span>
+                </a>
+            </li>
+            <li class="sidebar-title"><span>Services</span></li>
+            <li class="sidebar-list">
+                <a href="#">Booking <span class="menu-icon fa fa-plane"></span></a>
+            </li>
+            <li class="sidebar-list">
+                <a href="#">Food <span class="menu-icon fa fa-cutlery"></span></a>
+            </li>
+
+            <li class="sidebar-list">
+                <a href="#">Gift <span class="menu-icon fa fa-gift"></span></a>
+            </li>
+            <li class="sidebar-list">
+                <a href="#">Reservation <span class="menu-icon fa fa-calendar-o"></span></a>
+            </li>
+            <li class="sidebar-list">
+                <a href="#">Order<span class="menu-icon fa fa-shopping-cart"></span></a>
+            </li>
+            <li class="sidebar-list">
+                <a href="#">Medical<span class="menu-icon fa fa-medkit"></span></a>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- End Sidebar -->
+
+    <div class="row header">
+        <div class="col-xs-12">
+            <div class="user pull-right">
+                <div class="item dropdown">
+                    <a href="#" class="dropdown-toggle">
+                        <img src="img/avatar.jpg">
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li class="dropdown-header">
+                            Joe Bloggs
+                        </li>
+
+
+                        <li class="divider"></li>
+                        <li class="link">
+                            <a href="#">
+                                Profile
+                            </a>
+                        </li>
+                        <li class="link">
+                            <a href="#">
+                                Menu Item
+                            </a>
+                        </li>
+                        <li class="link">
+                            <a href="#">
+                                Menu Item
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="link">
+                            <a href="#">
+                                Logout
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <!--<div class="item dropdown">-->
+                    <!--<a href="#" class="dropdown-toggle">-->
+                        <!--<i class="fa fa-bell-o"></i>-->
+                    <!--</a>-->
+                    <!--<ul class="dropdown-menu dropdown-menu-right">-->
+                        <!--<li class="dropdown-header">-->
+                            <!--Notifications-->
+                        <!--</li>-->
+                        <!--<li class="divider"></li>-->
+                        <!--<li>-->
+                            <!--<a href="#">Server Down!</a>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+            </div>
+            <div class="meta">
+                <div class="page">
+
+
+                    <button class="btn btn-primary" id="paymentBtn" type="button">
+                        Create Payment <span class="badge"></span>
+                    </button>
+
+                    <button id="endConButton" class="btn btn-default">End Conversation</button>
+                    <button class="btn btn-default btn-info"><span class="glyphicon glyphicon-arrow-right glyphicon-refresh-animate"></span> Find Nearby Place</button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <ul class="pages">
+        <li class="chat page">
+            <div class="chatArea">
+                <ul class="messages"></ul>
+            </div>
+            <input class="inputMessage" placeholder="Type here..."/>
+        </li>
+        <li class="login page">
+            <div class="form">
+                <h3 class="title">Name</h3>
+                <input class="usernameInput" type="text" maxlength="14" />
+            </div>
+        </li>
+    </ul>
+
+    <!-- End Content Wrapper -->
+</div>
+<!-- End Page Wrapper -->
+</body>
+</html>
