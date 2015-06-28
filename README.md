@@ -36,3 +36,4 @@ If you'd like to include any additional modules/packages not included with rdash
 * [Leonel Samayoa](https://github.com/lsamayoa)
 * [Mathew Goldsborough](https://github.com/mgoldsborough)
 * [Ricardo Pascua Jr](https://github.com/rdpascua)
+* [Gökhan Karadaş](https://github.com/previousdeveloper)
